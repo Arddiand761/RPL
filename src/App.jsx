@@ -1,7 +1,13 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import Login from './component/login';
-import Home from './component/home';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Login from "./component/login";
+import Home from "./component/home";
+import Register from "./component/register";
 
 function App() {
   return (
@@ -13,13 +19,19 @@ function App() {
         <Route
           path="/home"
           element={
-            localStorage.getItem('isLoggedIn') === 'true'
-              ? <Home />
-              : <Navigate to="/" replace />
+            localStorage.getItem("isLoggedIn") === "true" ? (
+              <Home />
+            ) : (
+              <Navigate to="/" replace />
+            )
           }
         />
         {/* Redirect semua route yang tidak dikenal ke login */}
         <Route path="*" element={<Navigate to="/" replace />} />
+
+        {/* Halaman register */}
+        <Route path="/register" element={<Register />} />
+        {/* Halaman forgot password */}
       </Routes>
     </Router>
   );
