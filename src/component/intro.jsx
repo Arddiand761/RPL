@@ -10,7 +10,7 @@ const steps = [
         </span>
         <span className="block mb-4">Welcome to PojokKomik!</span>
         <span className="block text-gray-600 mb-8">
-          Before read, let us know about yours so we can give you interesting
+          before read, let us know about yours so we can give you interesting
           comic!
         </span>
       </>
