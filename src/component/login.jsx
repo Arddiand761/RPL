@@ -13,7 +13,7 @@ const Login = () => {
     // If successful, redirect to the home page
     if (email === "admin@email.com" && password === "admin") {
       localStorage.setItem("isLoggedIn", "true");
-      navigate("/home");
+      navigate("/reader");
     } else {
       alert("Invalid email or password");
     }
