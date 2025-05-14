@@ -10,13 +10,16 @@ const Register = () => {
     // For example, send a request to your backend API to create a new user
     // If successful, redirect to the login page
     alert("Registration successful!");
-    navigate("/");
+    navigate("/intro");
   };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-brand">
-      <div>
-        <div className="bg-white p-8 rounded-lg shadow-md w-96">
+      <div className="w-full max-w-sm md:max-w-md">
+        <div
+          className="bg-white p-8 rounded-lg shadow-md w-full max-w-md opacity-0 translate-y-4 transition-all duration-700 ease-in-out"
+          style={{ animation: "fadeInUp 0.7s forwards" }}
+        >
           <h2 className="text-2xl font-bold text-center mb-6 ">Register</h2>
           <form onSubmit={handleRegister}>
             <input

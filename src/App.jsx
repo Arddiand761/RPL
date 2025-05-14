@@ -8,6 +8,7 @@ import {
 import Login from "./component/login";
 import Home from "./component/home";
 import Register from "./component/register";
+import Intro from "./component/intro";
 
 function App() {
   return (
@@ -32,6 +33,8 @@ function App() {
         {/* Halaman register */}
         <Route path="/register" element={<Register />} />
         {/* Halaman forgot password */}
+
+        <Route path="/intro" element={<Intro />}></Route>
       </Routes>
     </Router>
   );
