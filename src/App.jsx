@@ -6,9 +6,10 @@ import {
   Navigate,
 } from "react-router-dom";
 import Login from "./component/login";
-import Home from "./component/home";
+import Reader from "./component/home-reader";
 import Register from "./component/register";
 import Intro from "./component/intro";
+import About from "./component/about";
 
 function App() {
   return (
@@ -18,10 +19,10 @@ function App() {
         <Route path="/" element={<Login />} />
         {/* Hanya bisa ke /home jika sudah login */}
         <Route
-          path="/home"
+          path="/reader"
           element={
             localStorage.getItem("isLoggedIn") === "true" ? (
-              <Home />
+              <Reader />
             ) : (
               <Navigate to="/" replace />
             )
@@ -35,6 +36,8 @@ function App() {
         {/* Halaman forgot password */}
 
         <Route path="/intro" element={<Intro />}></Route>
+
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </Router>
   );

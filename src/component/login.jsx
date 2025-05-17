@@ -13,7 +13,7 @@ const Login = () => {
     // If successful, redirect to the home page
     if (email === "admin@email.com" && password === "admin") {
       localStorage.setItem("isLoggedIn", "true");
-      navigate("/home");
+      navigate("/reader");
     } else {
       alert("Invalid email or password");
     }
@@ -54,6 +54,7 @@ const Login = () => {
               type="submit"
               className="w-full bg-red-500 text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition"
             >
+              <svg className="mr-3 size-1 animate-spin ..." viewBox="0 0 24 24"></svg>
               LOGIN
             </button>
             <div className="text-center mt-4 text-sm text-gray-600">
