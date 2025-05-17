@@ -10,6 +10,7 @@ import Reader from "./component/home-reader";
 import Register from "./component/register";
 import Intro from "./component/intro";
 import About from "./component/about";
+import Explore from "./component/explore";
 
 function App() {
   return (
@@ -38,6 +39,8 @@ function App() {
         <Route path="/intro" element={<Intro />}></Route>
 
         <Route path="/about" element={<About />}></Route>
+
+        <Route path="/explore" element={<About />}></Route>
       </Routes>
     </Router>
   );
