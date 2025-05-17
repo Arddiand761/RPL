@@ -9,6 +9,7 @@ import Login from "./component/login";
 import Reader from "./component/home-reader";
 import Register from "./component/register";
 import Intro from "./component/intro";
+import About from "./component/about";
 
 function App() {
   return (
@@ -35,6 +36,8 @@ function App() {
         {/* Halaman forgot password */}
 
         <Route path="/intro" element={<Intro />}></Route>
+
+        <Route path="/about" element={<About />}></Route>
       </Routes>
     </Router>
   );

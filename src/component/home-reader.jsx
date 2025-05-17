@@ -1,81 +1,55 @@
 import React from "react";
 import Navbar from "./navbar";
+import Testi from "./testimonials";
 
 const comics = [
-  { title: "Judul Komik", reads: 5, author: "Penulis" },
-  { title: "Judul Komik", reads: 5, author: "Penulis" },
-  { title: "Judul Komik", reads: 5, author: "Penulis" },
-  { title: "Judul Komik", reads: 5, author: "Penulis" },
+  { title: "Judul 1", reads: 5, author: "Penulis" },
+  { title: "Judul 2", reads: 5, author: "Penulis" },
+  { title: "Judul 3", reads: 5, author: "Penulis" },
+  { title: "Judul 4", reads: 5, author: "Penulis" },
+  { title: "Judul 4", reads: 5, author: "Penulis" },
+  { title: "Judul 4", reads: 5, author: "Penulis" },
+  { title: "Judul 4", reads: 5, author: "Penulis" },
+  { title: "Judul 4", reads: 5, author: "Penulis" },
 ];
-
-const testimonials = [{}, {}, {}];
 
 const Reader = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <div className="max-w-5xl mx-auto py-8 px-4">
-        {/* Komik Gratis Pilihan */}
-        <div className="mb-10">
-          <div className="flex justify-between items-center mb-4">
-            <span className="font-bold text-xl md:text-2xl">
-              Komik Gratis Pilihan
-            </span>
-            <a
-              href="#"
-              className="text-red-500 font-semibold text-base hover:underline transition"
-            >
-              Lihat Semua
-            </a>
-          </div>
-          <div className="flex gap-6 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300">
-            {comics.map((comic, idx) => (
+      <div className="flex flex-row justify-between ps-10 pe-15 m-4 ">
+        <h2 className="flex text-2xl font-bold">Komik Gratis Pilihan </h2>
+        <a href="#" className="text-1xl font-bold text-link ">
+          Komik lainya
+        </a>
+      </div>
+      <div className="font-sans max-w-6xl mx-auto p-5">
+        <div className="overflow-x-auto">
+          <div className="flex flex-row gap-6 p-4">
+            {comics.map((comic, index) => (
               <div
-                key={idx}
-                className="min-w-[180px] flex-shrink-0 bg-white rounded-xl shadow hover:shadow-lg transition"
+                key={index}
+                className="min-w-[220px] bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 flex-shrink-0"
               >
-                <div className="h-48 bg-orange-400 rounded-t-xl flex items-center justify-center text-black font-bold text-lg mb-2">
-                  Cover Komik
+                <div className="bg-gray-100 rounded-t-2xl h-48 flex items-center justify-center">
+                  <span className="text-sm font-semibold text-gray-500">
+                    Cover Komik
+                  </span>
                 </div>
-                <div className="px-3 pb-3">
-                  <div className="font-semibold text-base mb-1">
+                <div className="p-4">
+                  <h2 className="text-lg font-bold text-gray-800">
                     {comic.title}
-                  </div>
-                  <div className="text-xs text-gray-500 flex items-center gap-1">
-                    <span role="img" aria-label="eye">
-                      👁️
-                    </span>
+                  </h2>
+                  <p className="text-gray-500 text-sm mt-1">
                     {comic.reads} dibaca • {comic.author}
-                  </div>
+                  </p>
                 </div>
               </div>
             ))}
-            <button className="ml-2 px-3 py-2 bg-white border border-gray-300 rounded-full self-center shadow hover:bg-gray-100 transition">
-              <span className="text-xl">{">"}</span>
-            </button>
-          </div>
-        </div>
-
-        {/* Kata Mereka Tentang Seri Ini */}
-        <div className="bg-white border rounded-xl p-6 shadow">
-          <div className="font-bold text-xl mb-4">
-            Kata Mereka Tentang Seri Ini
-          </div>
-          <div className="flex gap-6 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300">
-            {testimonials.map((_, idx) => (
-              <div
-                key={idx}
-                className="min-w-[320px] h-32 bg-orange-300 rounded-lg flex items-center justify-center text-black font-semibold text-lg shadow hover:shadow-lg transition"
-              >
-                Testimoni
-              </div>
-            ))}
-            <button className="ml-2 px-3 py-2 bg-white border border-gray-300 rounded-full self-center shadow hover:bg-gray-100 transition">
-              <span className="text-xl">{">"}</span>
-            </button>
           </div>
         </div>
       </div>
+      <Testi />
     </div>
   );
 };
