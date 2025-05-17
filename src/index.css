@@ -7,6 +7,7 @@
   --color-brand: #E85A37;
   --color-secondary: #9b3016;
   --color-text : #c62314;
+  --color-search : #f1954f;
 }
 
 @layer utilities {
@@ -19,6 +20,10 @@
 
   .text-link{
     color: var(--color-text);
+  }
+
+  .search-color{
+    color: var(--color-search);
   }
 }
 
