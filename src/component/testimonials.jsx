@@ -10,7 +10,7 @@ const testimonials = [
 const Testi = () => {
   return (
     <div className="mt-20 w-full">
-      <h1 className="text-2xl font-bold font-sans px-6 ms-6 mb-6">Testimoni</h1>
+      <h1 className="flex justify-center items-center text-2xl font-bold font-sans px-6 ms-6 mb-6">Testimoni</h1>
       <div className="font-sans max-w-6xl mx-auto px-6">
         <div className="overflow-x-auto">
           <div className="flex flex-row gap-6 p-2">
