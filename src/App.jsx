@@ -1,45 +1,98 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   Navigate,
+  useLocation,
 } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { AnimationProvider } from "./utils/AnimationContext.jsx";
 import Login from "./component/login";
 import Reader from "./component/home-reader";
 import Register from "./component/register";
 import Intro from "./component/intro";
 import About from "./component/about";
+import Explore from "./component/explore";
+import TransitionWrapper from "./utils/TransitionWarper.jsx";
 
-function App() {
+function AnimatedRoutes() {
+  const location = useLocation();
+
   return (
-    <Router>
-      <Routes>
-        {/* Selalu mulai dari halaman login */}
-        <Route path="/" element={<Login />} />
-        {/* Hanya bisa ke /home jika sudah login */}
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <TransitionWrapper>
+              <Login />
+            </TransitionWrapper>
+          }
+        />
+
         <Route
           path="/reader"
           element={
             localStorage.getItem("isLoggedIn") === "true" ? (
-              <Reader />
+              <TransitionWrapper>
+                <Reader />
+              </TransitionWrapper>
             ) : (
               <Navigate to="/" replace />
             )
           }
         />
-        {/* Redirect semua route yang tidak dikenal ke login */}
+
+        <Route
+          path="/register"
+          element={
+            <TransitionWrapper>
+              <Register />
+            </TransitionWrapper>
+          }
+        />
+
+        <Route
+          path="/intro"
+          element={
+            <TransitionWrapper>
+              <Intro />
+            </TransitionWrapper>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <TransitionWrapper>
+              <About />
+            </TransitionWrapper>
+          }
+        />
+
+        <Route
+          path="/explore"
+          element={
+            <TransitionWrapper>
+              <Explore />
+            </TransitionWrapper>
+          }
+        />
+
         <Route path="*" element={<Navigate to="/" replace />} />
-
-        {/* Halaman register */}
-        <Route path="/register" element={<Register />} />
-        {/* Halaman forgot password */}
-
-        <Route path="/intro" element={<Intro />}></Route>
-
-        <Route path="/about" element={<About />}></Route>
       </Routes>
-    </Router>
+    </AnimatePresence>
+  );
+}
+
+function App() {
+  return (
+    <AnimationProvider>
+      <Router>
+        <AnimatedRoutes />
+      </Router>
+    </AnimationProvider>
   );
 }
 
