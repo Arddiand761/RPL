@@ -8,6 +8,7 @@
   --color-secondary: #9b3016;
   --color-text : #c62314;
   --color-search : #f1954f;
+  --genre-color: #fff5f2
 }
 
 @layer utilities {
@@ -24,6 +25,10 @@
 
   .search-color{
     color: var(--color-search);
+  }
+
+  .genre-color{
+    color: var(--genre-color);
   }
 }
 
