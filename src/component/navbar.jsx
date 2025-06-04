@@ -12,6 +12,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <div className="w-10 h-10 rounded-full bg-gray-200" />
           <div className="hidden md:flex gap-6 ml-4">
+            <a href="/reader" className="font-medium text-gray-700 hover:text-orange-500 transition">Home</a>
             <a href="/about" className="font-medium text-gray-700 hover:text-orange-500 transition">
               About Us
             </a>
@@ -53,6 +54,9 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden mt-4 px-4 space-y-2">
+          <a href="/reader" className="block font-medium text-gray-700 hover:text-orange-500 transition">
+            Home
+          </a>
           <a href="/about" className="block font-medium text-gray-700 hover:text-orange-500 transition">
             About Us
           </a>

@@ -45,10 +45,10 @@ const Login = () => {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    setTransitionType("slide");
+    setTransitionType("fade");
     navigate("/register", {
       state: {
-        transition: "slide",
+        transition: "fade",
       },
     });
   };
